@@ -1,0 +1,18 @@
+@use '../globals/variables' as v;
+@mixin section-center {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+@mixin btn {
+  display: inline-block;
+  padding: 0.375rem 0.775rem;
+  text-transform: capitalize;
+  background-color: transparent;
+  color: v.$Very-dark-blue;
+  transition: v.$transition;
+  letter-spacing: v.$spacing;
+  border: transparent;
+  cursor: pointer;
+}

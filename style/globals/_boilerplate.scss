@@ -1,0 +1,28 @@
+@use '../utils';
+@use '../utils/fonts' as u;
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  font-family: u.$primary;
+}

@@ -1,0 +1,42 @@
+@use '../utils/mixins' as m;
+@use '../globals/variables' as v;
+nav {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  .nav__center {
+    @include m.section-center;
+    display: flex;
+    justify-content: space-between;
+  }
+  align-items: center;
+  .nav__links {
+    display: none;
+  }
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .toggle-btn {
+    @include m.btn;
+  }
+  @media (min-width: 800px) {
+    .toggle-btn {
+      display: none;
+    }
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .nav__link {
+        text-transform: capitalize;
+        letter-spacing: v.$spacing;
+        transition: v.$transition;
+      }
+      .nav__link:hover {
+        font-weight: 600;
+        color: v.$soft-orange;
+      }
+    }
+  }
+}
