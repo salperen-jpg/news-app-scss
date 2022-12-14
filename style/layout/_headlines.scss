@@ -1,0 +1,47 @@
+@use '../utils/mixins' as m;
+@use '../globals/variables' as v;
+.headline {
+  margin-top: 2rem;
+  &__section-center {
+    @include m.section-center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(368.3px, 1fr));
+    gap: 2rem;
+    .headline__single-headline {
+      display: flex;
+      gap: 1.25rem;
+      img {
+        height: 10rem;
+        width: 8rem;
+      }
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .number {
+        font-size: 2.5rem;
+        letter-spacing: v.$spacing;
+        color: v.$Grayish-blue;
+      }
+      h5 {
+        text-transform: capitalize;
+        font-size: 1.15rem;
+        color: v.$Very-dark-blue;
+        margin: 0;
+      }
+      p {
+        line-height: 1.5;
+        max-width: 15rem;
+      }
+    }
+  }
+  @media (min-width: 800px) {
+    .headline {
+      img {
+        width: 11rem;
+        height: 10rem;
+      }
+    }
+  }
+}
