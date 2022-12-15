@@ -39,6 +39,11 @@
     li {
       text-transform: capitalize;
       letter-spacing: v.$spacing;
+      transition: v.$transition;
+      cursor: pointer;
+    }
+    li:hover {
+      color: v.$soft-orange;
     }
   }
 }

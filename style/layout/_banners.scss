@@ -2,11 +2,10 @@
 @use '../globals/variables' as v;
 
 main {
-  min-height: calc(100vh - 7rem);
   .banner__section-center {
     @include m.section-center;
     display: grid;
-    gap: 1.5rem;
+    gap: 1.75rem;
     h1 {
       max-width: 21rem;
       font-weight: 700;
@@ -23,6 +22,75 @@ main {
       font-size: 0.875rem;
       padding: 0.75rem 1.5rem;
       margin-top: 1rem;
+    }
+    // NEW
+    .new {
+      padding: 0 1.5rem;
+      background: v.$Very-dark-blue;
+      h1 {
+        padding-top: 1rem;
+        color: v.$soft-orange;
+      }
+      article {
+        border-bottom: 1px solid v.$Dark-grayish-blue;
+        h4 {
+          color: v.$white;
+          margin-bottom: 1rem;
+        }
+        p {
+          color: v.$Grayish-blue;
+          max-width: 20rem;
+          line-height: 2;
+          letter-spacing: 1px;
+        }
+      }
+      article:nth-of-type(3) {
+        border: none;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    .banner__section-center {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 250px);
+      gap: 1.5rem 2rem;
+      grid-template-areas:
+        'img img new'
+        'heading info new';
+      .new {
+        padding: 1.5rem 1.25rem;
+        h1 {
+          margin-bottom: 1rem;
+          padding-top: 0;
+        }
+        article {
+          padding: 1rem 0;
+          p {
+            line-height: 1.5;
+          }
+          h4 {
+            margin-bottom: 0.75rem;
+          }
+        }
+      }
+      .banner-btn {
+        margin-top: 2rem;
+      }
+    }
+
+    .banner-image {
+      grid-area: img;
+      height: 100%;
+    }
+    .title {
+      font-size: 3.5rem;
+      grid-area: heading;
+    }
+    .info {
+      grid-area: info;
+    }
+    .new {
+      grid-row: new;
     }
   }
 }

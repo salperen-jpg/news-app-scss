@@ -155,6 +155,11 @@ nav .toggle-btn {
 .modal-content ul li {
   text-transform: capitalize;
   letter-spacing: 3px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.modal-content ul li:hover {
+  color: hsl(35deg, 77%, 62%);
 }
 
 .show .modal-content {
@@ -162,7 +167,7 @@ nav .toggle-btn {
 }
 
 .headline {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 .headline__section-center {
   width: 90vw;
@@ -207,15 +212,12 @@ nav .toggle-btn {
   }
 }
 
-main {
-  min-height: calc(100vh - 7rem);
-}
 main .banner__section-center {
   width: 90vw;
   max-width: 1170px;
   margin: 0 auto;
   display: grid;
-  gap: 1.5rem;
+  gap: 1.75rem;
 }
 main .banner__section-center h1 {
   max-width: 21rem;
@@ -241,4 +243,69 @@ main .banner__section-center .banner-btn {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   margin-top: 1rem;
+}
+main .banner__section-center .new {
+  padding: 0 1.5rem;
+  background: hsl(240deg, 100%, 5%);
+}
+main .banner__section-center .new h1 {
+  padding-top: 1rem;
+  color: hsl(35deg, 77%, 62%);
+}
+main .banner__section-center .new article {
+  border-bottom: 1px solid hsl(236deg, 13%, 42%);
+}
+main .banner__section-center .new article h4 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+main .banner__section-center .new article p {
+  color: hsl(233deg, 8%, 79%);
+  max-width: 20rem;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+main .banner__section-center .new article:nth-of-type(3) {
+  border: none;
+}
+@media (min-width: 1200px) {
+  main .banner__section-center {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    gap: 1.5rem 2rem;
+    grid-template-areas: "img img new" "heading info new";
+  }
+  main .banner__section-center .new {
+    padding: 1.5rem 1.25rem;
+  }
+  main .banner__section-center .new h1 {
+    margin-bottom: 1rem;
+    padding-top: 0;
+  }
+  main .banner__section-center .new article {
+    padding: 1rem 0;
+  }
+  main .banner__section-center .new article p {
+    line-height: 1.5;
+  }
+  main .banner__section-center .new article h4 {
+    margin-bottom: 0.75rem;
+  }
+  main .banner__section-center .banner-btn {
+    margin-top: 2rem;
+  }
+  main .banner-image {
+    grid-area: img;
+    height: 100%;
+  }
+  main .title {
+    font-size: 3.5rem;
+    grid-area: heading;
+  }
+  main .info {
+    grid-area: info;
+  }
+  main .new {
+    grid-row: new;
+  }
 }/*# sourceMappingURL=main.css.map */

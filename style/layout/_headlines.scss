@@ -1,7 +1,7 @@
 @use '../utils/mixins' as m;
 @use '../globals/variables' as v;
 .headline {
-  margin-top: 2rem;
+  margin-top: 4rem;
   &__section-center {
     @include m.section-center;
     display: grid;
